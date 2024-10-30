@@ -9,7 +9,6 @@ namespace Delatbabel\Contacts\Models;
 
 use Config;
 use DB;
-use Delatbabel\Applog\Models\Auditable;
 use Delatbabel\Fluents\Fluents;
 use Delatbabel\Keylists\Models\Keyvalue;
 use Illuminate\Database\Eloquent\Model;
@@ -22,7 +21,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  */
 class Address extends Model
 {
-    use SoftDeletes, Fluents, Auditable;
+    use SoftDeletes, Fluents;
 
     /** @var array */
     protected $guarded = ['id'];

@@ -6,11 +6,9 @@
  */
 namespace Delatbabel\Contacts;
 
-use Delatbabel\Applog\DebugServiceProvider;
 use Delatbabel\Contacts\Commands\Geocode;
 use Delatbabel\Keylists\KeylistsServiceProvider;
 use Delatbabel\NestedCategories\NestedCategoriesServiceProvider;
-use Delatbabel\SiteConfig\SiteConfigServiceProvider;
 use Illuminate\Support\ServiceProvider;
 
 /**
@@ -56,10 +54,8 @@ class ContactsServiceProvider extends ServiceProvider
 
         // Register other providers required by this provider, which saves the caller
         // from having to register them each individually.
-        $this->app->register(DebugServiceProvider::class);
         $this->app->register(NestedCategoriesServiceProvider::class);
         $this->app->register(KeylistsServiceProvider::class);
-        $this->app->register(SiteConfigServiceProvider::class);
 
         // Define all commands
         $this->commands($this->moreCommands);

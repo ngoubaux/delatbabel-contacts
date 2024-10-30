@@ -1,24 +1,19 @@
 {
-    "name": "delatbabel/contacts",
+    "name": "ngoubaux/delatbabel-contacts",
     "description": "Laravel contact management package.",
     "keywords": ["laravel", "contact", "address", "crm"],
     "license": "MIT",
     "authors": [
         {
-            "name": "Del",
-            "email": "del@babel.com.au"
+            "name": "Goubs",
+            "email": "info@goubs.net"
         }
     ],
     "require": {
-        "php": ">=5.4.0",
-        "delatbabel/applog": "dev-master",
+        "php": "^8.1",
         "delatbabel/fluents": "~1.0",
-        "delatbabel/nestedcategories": "dev-master",
-        "delatbabel/keylists": "dev-master",
-        "delatbabel/site-config": "dev-master",
-        "illuminate/contracts": "~5.0",
-        "illuminate/database": "~5.0",
-        "illuminate/support": "~5.0"
+        "delatbabel/nestedcategories": "~1.1",
+        "delatbabel/keylists": "~1.5"
     },
     "autoload": {
         "psr-4": {

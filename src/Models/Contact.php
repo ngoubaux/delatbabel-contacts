@@ -8,7 +8,6 @@
 namespace Delatbabel\Contacts\Models;
 
 use Carbon\Carbon;
-use Delatbabel\Applog\Models\Auditable;
 use Delatbabel\Fluents\Fluents;
 use Delatbabel\Keylists\Models\Keyvalue;
 use Delatbabel\NestedCategories\Models\Category;
@@ -23,7 +22,7 @@ use Illuminate\Support\Facades\DB;
  */
 class Contact extends Model
 {
-    use DDSoftDeletes, Fluents, Auditable;
+    use DDSoftDeletes, Fluents;
 
     /** @var array */
     protected $guarded = ['id'];

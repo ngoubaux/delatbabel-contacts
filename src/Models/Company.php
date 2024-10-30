@@ -3,7 +3,6 @@
 namespace Delatbabel\Contacts\Models;
 
 use Carbon\Carbon;
-use Delatbabel\Applog\Models\Auditable;
 use Delatbabel\Fluents\Fluents;
 use Delatbabel\NestedCategories\Models\Category;
 use DDPro\Admin\Includes\DDSoftDeletes;
@@ -19,7 +18,7 @@ use Illuminate\Support\Str;
  */
 class Company extends Model
 {
-    use DDSoftDeletes, Fluents, Auditable;
+    use DDSoftDeletes, Fluents;
 
     /** @var array */
     protected $guarded = ['id'];

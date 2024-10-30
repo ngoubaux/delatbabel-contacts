@@ -22,7 +22,7 @@ Storage of:
 Interface with external CRM systems. Target systems include anything that provides a reasonable
 API, starting with the open source systems. There is a list of
 [Top 10 Open Source CRM Systems](http://www.crmsearch.com/top-10-open-source-crm-systems.php)
-that we plan to integrate to. 
+that we plan to integrate to.
 Other systems that have an API that we plan interfacing to include:
 
 * [SalesForce](http://www.salesforce.com/)
@@ -47,7 +47,7 @@ Once that is done, run the composer update command:
 Alternatively just run this:
 
 ```
-    composer require delatbabel/contacts
+    composer require ngoubaux/delatbabel-contacts
 ```
 
 ## Register Service Provider
@@ -205,9 +205,6 @@ current addresses can be stored if required.
 
 These are automatically handled by composer:
 
-* [Applog](https://github.com/delatbabel/applog) for auditing and application logging to the database.
 * [NestedCategories](https://github.com/delatbabel/nestedcategories) for contact and company categories.
 * [Keylists](https://github.com/delatbabel/keylists) for key/value list storage such as address types and statuses.
 * [NestedCategories](https://github.com/delatbabel/nestedcategories) for contact and company categories.
-* [SiteConfig](https://github.com/delatbabel/site-config) for database backed configuration, e.g. geolocation keys.
-* [Eloquent ORM](https://github.com/illuminate/database) for database access.
