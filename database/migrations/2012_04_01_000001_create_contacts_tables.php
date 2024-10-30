@@ -14,7 +14,7 @@ class CreateContactsTables extends Migration
     public function up()
     {
         Schema::create('addresses', function (Blueprint $table) {
-            $table->increments('id');
+            $table->id();
             // Multi line street address if required.
             $table->text('street')->nullable();
             $table->string('suburb', 255)->nullable();
@@ -39,8 +39,8 @@ class CreateContactsTables extends Migration
         });
 
         Schema::create('companies', function (Blueprint $table) {
-            $table->increments('id');
-            $table->integer('category_id')->unsigned()->nullable();
+            $table->id();
+            $table->unsignedBigInteger('category_id')->unsigned()->nullable();
             $table->string('company_name', 255)->nullable()->index();
             $table->string('contact_name', 255)->nullable();
             $table->string('contact_phone', 255)->nullable();
@@ -70,9 +70,9 @@ class CreateContactsTables extends Migration
         });
 
         Schema::create('contacts', function (Blueprint $table) {
-            $table->increments('id');
-            $table->integer('company_id')->unsigned()->nullable();
-            $table->integer('category_id')->unsigned()->nullable();
+            $table->id();
+            $table->unsignedBigInteger('company_id')->unsigned()->nullable();
+            $table->unsignedBigInteger('category_id')->unsigned()->nullable();
             $table->string('first_name', 255)->nullable();
             $table->string('last_name', 255)->nullable()->index();
             $table->string('full_name', 255)->nullable()->index();
@@ -105,7 +105,7 @@ class CreateContactsTables extends Migration
         });
 
         Schema::create('crms', function (Blueprint $table) {
-            $table->increments('id');
+            $table->id();
             $table->string('crm_name', 255)->index();
             $table->string('crm_description', 255)->nullable();
             $table->string('url', 255);
@@ -127,9 +127,9 @@ class CreateContactsTables extends Migration
         // particularly well.  Also it reduces the number of cross
         // table joins which makes queries a bit more efficient.
         Schema::create('address_contact', function (Blueprint $table) {
-            $table->increments('id');
-            $table->integer('address_id')->unsigned();
-            $table->integer('contact_id')->unsigned();
+            $table->id();
+            $table->unsignedBigInteger('address_id')->unsigned();
+            $table->unsignedBigInteger('contact_id')->unsigned();
             $table->string('address_type', 20)->nullable();
             $table->string('status', 20)->nullable();
             $table->date('start_date')->nullable();
@@ -146,9 +146,9 @@ class CreateContactsTables extends Migration
         });
 
         Schema::create('address_company', function (Blueprint $table) {
-            $table->increments('id');
-            $table->integer('address_id')->unsigned();
-            $table->integer('company_id')->unsigned();
+            $table->id();
+            $table->unsignedBigInteger('address_id')->unsigned();
+            $table->unsignedBigInteger('company_id')->unsigned();
             $table->string('address_type', 20)->nullable();
             $table->string('status', 20)->nullable();
             $table->date('start_date')->nullable();
@@ -165,9 +165,9 @@ class CreateContactsTables extends Migration
         });
 
         Schema::create('category_company', function (Blueprint $table) {
-            $table->increments('id');
-            $table->integer('category_id')->unsigned();
-            $table->integer('company_id')->unsigned();
+            $table->id();
+            $table->unsignedBigInteger('category_id')->unsigned();
+            $table->unsignedBigInteger('company_id')->unsigned();
             $table->nullableTimestamps();
 
             $table->unique(['category_id', 'company_id']);

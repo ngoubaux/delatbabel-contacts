@@ -12,7 +12,7 @@ use Delatbabel\Fluents\Fluents;
 use Delatbabel\Keylists\Models\Keyvalue;
 use Delatbabel\NestedCategories\Models\Category;
 use Illuminate\Database\Eloquent\Model;
-use DDPro\Admin\Includes\DDSoftDeletes;
+use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Support\Facades\DB;
 
 /**
@@ -22,7 +22,7 @@ use Illuminate\Support\Facades\DB;
  */
 class Contact extends Model
 {
-    use DDSoftDeletes, Fluents;
+    use SoftDeletes, Fluents;
 
     /** @var array */
     protected $guarded = ['id'];

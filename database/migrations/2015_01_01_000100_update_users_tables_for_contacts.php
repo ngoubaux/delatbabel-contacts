@@ -13,8 +13,8 @@ class UpdateUsersTablesForContacts extends Migration
     public function up()
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->integer('website_id')->unsigned()->nullable()->after('id');
-            $table->integer('contact_id')->unsigned()->nullable()->after('website_id');
+            $table->unsignedBigInteger('website_id')->unsigned()->nullable()->after('id');
+            $table->unsignedBigInteger('contact_id')->unsigned()->nullable()->after('website_id');
 
             $table->foreign('website_id')
                 ->references('id')->on('websites')
@@ -27,7 +27,7 @@ class UpdateUsersTablesForContacts extends Migration
         });
 
         Schema::table('contacts', function (Blueprint $table) {
-            $table->integer('user_id')->unsigned()->nullable()->after('id');
+            $table->unsignedBigInteger('user_id')->unsigned()->nullable()->after('id');
 
             $table->foreign('user_id')
                 ->references('id')->on('users')

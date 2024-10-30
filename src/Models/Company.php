@@ -5,7 +5,7 @@ namespace Delatbabel\Contacts\Models;
 use Carbon\Carbon;
 use Delatbabel\Fluents\Fluents;
 use Delatbabel\NestedCategories\Models\Category;
-use DDPro\Admin\Includes\DDSoftDeletes;
+use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Fluent;
@@ -18,7 +18,7 @@ use Illuminate\Support\Str;
  */
 class Company extends Model
 {
-    use DDSoftDeletes, Fluents;
+    use SoftDeletes, Fluents;
 
     /** @var array */
     protected $guarded = ['id'];
